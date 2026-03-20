@@ -1,0 +1,54 @@
+{
+  "metadata": {
+    "version": "2.0",
+    "last_verified": "2026-03-08",
+    "jurisdiction": "India",
+    "official_sources": [
+      "https://rtionline.gov.in",
+      "https://uidai.gov.in",
+      "https://gazette.gov.in"
+    ]
+  },
+  "rti_act_2005": {
+    "full_name": "Right to Information Act, 2005",
+    "sections": {
+      "section_7": {
+        "title": "Time limit for providing information",
+        "rule": "30 calendar days from receipt of RTI application",
+        "extension": "Additional 20 days if information involves third parties",
+        "source": "rtionline.gov.in"
+      },
+      "section_8": {
+        "title": "Fee for providing information",
+        "post": {
+          "amount_inr": 10,
+          "currency": "INR",
+          "method": "Postal money order or via NEFT"
+        },
+        "courier": {
+          "amount_inr": 30,
+          "currency": "INR",
+          "method": "Courier charges actual + 10"
+        },
+        "exemption": "BPL families, SC/ST candidates, government employees requesting job-related info",
+        "source": "rtionline.gov.in, RTI Act Section 8"
+      }
+    }
+  },
+  "fees_summary": {
+    "postal": 10,
+    "courier": 30,
+    "notes": "Non-refundable. Send via money order or NEFT. Free for BPL/SC/ST.",
+    "source": "rtionline.gov.in"
+  },
+  "common_info": {
+    "response_time": "30 calendar days (Section 7)",
+    "appeal_time": "30 days from rejection",
+    "commission_appeal": "90 days from first appeal rejection",
+    "verification_links": {
+      "primary": "https://rtionline.gov.in",
+      "aadhaar": "https://uidai.gov.in",
+      "gazette": "https://gazette.gov.in"
+    }
+  }
+}
