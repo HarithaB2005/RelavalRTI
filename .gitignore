@@ -1,4 +1,16 @@
 node_modules/
 dist/
 .env
+.env.*
+!.env.example
 *.log
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+
+# Tooling caches
+.npm/
+coverage/
