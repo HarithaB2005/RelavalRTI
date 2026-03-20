@@ -1,71 +1,83 @@
 # RelavalRTI
 
-RelavalRTI is a React + Vite frontend that provides an RTI guidance chat experience backed by a Nexus API endpoint.
+A production-oriented React + Vite frontend for RTI guidance flows, powered by a Nexus API backend.
 
-## Features
-- Conversational RTI assistant UX built with React.
-- Structured response parsing using a `<NEXUS_JSON>` block contract.
-- Source-grounded legal/procedure context support.
-- Local proof script (`npm run prove`) to compare profile behavior.
+This repository is designed to be public-safe:
+- no committed runtime secrets
+- explicit environment setup
+- basic security and repository hygiene in place
 
-## Tech Stack
+## Highlights
+- Chat-first RTI assistance UX
+- Structured model contract using `<NEXUS_JSON>` blocks
+- Verified legal/procedure source injection support
+- Scripted profile proofing via `npm run prove`
+
+## Stack
 - React 18
 - Vite 5
 - Node.js 18+
 
-## Getting Started
-1. Install dependencies:
+## Quick Start
 
+### 1) Install
 ```bash
 npm install
 ```
 
-2. Create your local environment file:
-
+### 2) Create local env
 ```bash
 copy .env.example .env
 ```
 
-3. Update `.env` values:
-- `VITE_NEXUS_API` - Nexus backend endpoint (example: `http://localhost:8000/api/v1/generate-prompt`)
-- `VITE_NEXUS_KEY` - API key used by the frontend for development
-- `NEXUS_API` - Used by the proof script
-- `NEXUS_KEY` - Used by the proof script
+### 3) Configure variables
+Update `.env` values before running.
 
-## Run Locally
-```bash
-npm run dev
+| Variable | Required | Purpose | Example |
+|---|---|---|---|
+| `VITE_NEXUS_API` | Yes | Frontend API endpoint | `http://localhost:8000/api/v1/generate-prompt` |
+| `VITE_NEXUS_KEY` | Yes | Frontend bearer key for Nexus calls | `relevo_sk_xxx` |
+| `NEXUS_API` | For proof script | Endpoint used by `npm run prove` | `http://localhost:8000/api/v1/generate-prompt` |
+| `NEXUS_KEY` | For proof script | Key used by `npm run prove` | `relevo_sk_xxx` |
+
+## Scripts
+
+| Command | Description |
+|---|---|
+| `npm run dev` | Start local dev server |
+| `npm run build` | Build production assets |
+| `npm run preview` | Preview production build locally |
+| `npm run prove` | Run profile/proof comparison script |
+
+## Project Structure
+
+```text
+.
+|- index.html
+|- main.jsx
+|- relavalrti.jsx
+|- rti-sources.json
+|- prove-nexus-difference.mjs
+|- package.json
+|- vite.config.js
+|- .env.example
+|- .gitignore
+|- SECURITY.md
+|- LICENSE
 ```
 
-Default Vite port is configured in `vite.config.js`.
-
-## Build
-```bash
-npm run build
-```
-
-## Preview Production Build
-```bash
-npm run preview
-```
-
-## Proof Script
-Run profile comparison checks:
-
-```bash
-npm run prove
-```
-
-## Security Notes
-- Do not commit real API keys or secrets.
-- Rotate any key that was previously exposed.
+## Security
+- Never commit real keys, tokens, or credentials.
+- Rotate any key that may have been exposed.
 - Keep `.env` local only.
-- Prefer using restricted/short-lived keys for frontend testing.
+- Use scoped and short-lived credentials where possible.
 
-## Repository Hygiene
-- `node_modules/` and `dist/` are ignored.
-- `.env` files are ignored.
-- Keep `rti-sources.json` factual and timestamped when updating legal references.
+See `SECURITY.md` for vulnerability reporting guidance.
+
+## Contribution
+1. Create a feature branch.
+2. Keep changes focused and documented.
+3. Validate with `npm run build` before opening a PR.
 
 ## License
-This project is licensed under the MIT License. See `LICENSE`.
+MIT License. See `LICENSE`.
